@@ -1,0 +1,5 @@
+<?php include 'db.php'; $msg=''; if($_SERVER['REQUEST_METHOD']=='POST'){ $u=$_POST['username']; $p=$_POST['password']; $stmt=$conn->prepare("SELECT * FROM USER_ACCOUNT WHERE Username=? AND Password=?"); $stmt->bind_param('ss',$u,$p); $stmt->execute(); $res=$stmt->get_result(); if($row=$res->fetch_assoc()){ $_SESSION['user_id']=$row['User_ID']; $_SESSION['username']=$row['Username']; $_SESSION['role']=$row['Role']; header('Location: '.strtolower($row['Role']).'_dashboard.php'); exit; } else $msg='Invalid username or password'; } $page_title='Login'; include 'header.php'; ?>
+<h2>Login</h2><?php if($msg) echo '<div class="alert error">'.esc($msg).'</div>'; ?>
+<form class="form" method="post"><label>Username</label><input name="username" required><label>Password</label><input type="password" name="password" required><button>Login</button></form>
+<p>Demo users: patient1 / doctor1 / nurse1 / admin1 — password: 12345</p>
+<?php include 'footer.php'; ?>

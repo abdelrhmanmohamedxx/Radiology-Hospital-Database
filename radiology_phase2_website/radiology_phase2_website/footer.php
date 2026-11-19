@@ -1,0 +1,1 @@
+</main><footer>Radiology Department Hospital Information System - Phase 2</footer><script src="assets/script.js"></script></body></html>

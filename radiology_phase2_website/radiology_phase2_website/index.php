@@ -1,0 +1,4 @@
+<?php include 'db.php'; $page_title='Home'; include 'header.php'; ?>
+<section class="hero"><h1>Hospital Information System - Radiology Department</h1><p>Manage patients, doctors, nurses, radiology tests, appointments, reports, payments, rooms, and scan uploads.</p><a class="btn" href="login.php">Login</a> <a class="btn secondary" href="register.php">Register Patient</a></section>
+<div class="cards"><div class="card"><h3>Patients</h3><p>Book appointments, upload scans, view reports and payments.</p></div><div class="card"><h3>Doctors</h3><p>View assigned appointments and write radiology reports.</p></div><div class="card"><h3>Nurses</h3><p>View assigned rooms, appointments, and patient test details.</p></div><div class="card"><h3>Admin</h3><p>Manage all records and view system statistics.</p></div></div>
+<?php include 'footer.php'; ?>

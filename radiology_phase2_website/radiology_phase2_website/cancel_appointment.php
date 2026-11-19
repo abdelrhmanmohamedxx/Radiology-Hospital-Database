@@ -1,0 +1,1 @@
+<?php include 'db.php'; require_role(['Patient','Admin']); $id=intval($_GET['id']); $conn->query("UPDATE APPOINTMENT SET Status='Cancelled' WHERE Appointment_ID=$id"); header('Location: patient_dashboard.php'); exit; ?>
